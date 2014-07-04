@@ -13,10 +13,11 @@ php:
 before_script:
     - composer self-update
     - composer install --dev
+    - phpunit --version
 
 script: phpunit --coverage-clover clover
 
-after_success:
-    - wget https://scrutinizer-ci.com/ocular.phar
-    - php ocular.phar code-coverage:upload --format=php-clover clover
+#after_success:
+    #- wget https://scrutinizer-ci.com/ocular.phar
+    #- php ocular.phar code-coverage:upload --format=php-clover clover
 
